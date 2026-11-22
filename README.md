@@ -15,6 +15,18 @@ node --input-type=module -e "import { isValid } from '@ohtf/nhs-number-js'; cons
 
 One TypeScript source builds to an ES module (`.js`) and declarations (`.d.ts`). The same `import` works in JavaScript and TypeScript, including browser apps using a bundler. On supported Node versions, JavaScript callers can also use `require('@ohtf/nhs-number-js')`. For another local project, run `npm pack --ignore-scripts` after building, then install the resulting tarball.
 
+## How it compares
+
+Use `nhs-number-js` if you need the same CHI and range checks as [OHTF’s Python library](https://github.com/ohtf/nhs-number-py). In a side-by-side check of the versions below, all three alternatives accepted a CHI number with an impossible date and a matching Modulus 11 digit, and rejected a valid Modulus 10-only CHI number. This library handles both cases, lets you opt out of Modulus 10, and can report or require a region by numeric range. Those behaviours are checked against the [shared Python vectors](tests/conformance/README.md).
+
+| Alternative tested | Where it may fit better |
+| --- | --- |
+| [`validate-nhs-number` 1.1.1](https://www.npmjs.com/package/validate-nhs-number/v/1.1.1) | Accepts digit arrays and whitespace outside the usual `3-3-4` grouping, while rejecting punctuation. Can be loaded as a classic browser script. |
+| [`valid-nhsnum` 1.0.4](https://www.npmjs.com/package/valid-nhsnum/v/1.0.4) | Includes a number generator and accepts more free-form pasted input. It also accepts mixed separators and punctuation that this library deliberately rejects. |
+| [`nhs-number-validator` 1.1.2](https://www.npmjs.com/package/nhs-number-validator/v/1.1.2) | Includes an interactive CLI and can be loaded as a classic browser script. It expects an unformatted number. |
+
+All four agreed on the plain ten-digit Modulus 11 examples tested, with a correct and an incorrect check digit. The comparison used published test examples, not patient records. It did not measure speed or bundle size.
+
 ## API
 
 | Export | Result |

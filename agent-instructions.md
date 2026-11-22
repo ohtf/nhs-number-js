@@ -16,7 +16,7 @@ This library standardises and validates NHS-family identifiers and classifies th
 
 - `npm ci --ignore-scripts` installs the compiler. `s/build` builds the package; `s/test` builds and checks the runtime and declarations.
 - Before each commit, run `s/test`, `npm audit`, `reuse lint` and `zizmor --strict-collection .`. CI also checks packaging on the minimum supported Node version and a current LTS release.
-- Commit validated work locally with DCO sign-off. No remote is configured yet. When creating one, apply at least the Solo `main` protection baseline before pushing; use the clinical tier before a live patient-facing release. Do not push, publish or post without explicit permission.
+- Commit validated work locally with DCO sign-off. The [OHTF GitHub repository](https://github.com/ohtf/nhs-number-js) uses the Solo `main` protection baseline. Reassess the tier before accepting regular collaborators, publishing packages or recommending live use. Do not push, publish or post without explicit permission.
 
 ## Publicity
 
