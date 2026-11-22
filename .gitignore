@@ -1,0 +1,11 @@
+/dist/
+/node_modules/
+/*.tgz
+
+# Disposable agent and browser-automation artefacts
+/.playwright-mcp/
+/.playwright/
+/playwright-report/
+/blob-report/
+/test-results/
+/.claude/

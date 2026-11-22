@@ -1,0 +1,10 @@
+# Validation contract
+
+[OHTF’s Python `nhs-number`](https://github.com/ohtf/nhs-number-py) is the reference implementation. The [conformance fixture](../tests/conformance/README.md) defines the shared behaviour. The JavaScript API uses camelCase names and an options object; it does not copy Python’s object API, generation or disguising.
+
+- Standardise to ten ASCII digits. Accept unformatted strings or `3-3-4` groups separated consistently by single spaces or hyphens. Trim surrounding whitespace. Left-pad integers from zero through `9999999999`. Reject other inputs rather than coercing them. Unlike Python’s Unicode-aware `\d`, this port accepts only ASCII digits.
+- Identify ranges by inclusive numeric boundaries. `regionOf` does not check the checksum or date. A well-formed input below the first range returns `null`. England, Wales and the Isle of Man share a region name and cannot be distinguished by number range.
+- Require Modulus 11 for non-CHI numbers. For numbers in the Scotland range, also check that the first six digits form a calendar date in `DDMMYY` order and accept either Modulus 11 or Modulus 10 by default. `checkMod10: false` disables only the Modulus 10 check. Resolve `00`–`68` as 2000–2068 and `69`–`99` as 1969–1999 to match Python’s `%y`.
+- An explicit `forRegion` restricts validation to that region. Without it, a number outside all known ranges can still pass the checksum. Unrecognised option names and invalid option values fail validation. A Modulus 11 result of `10` cannot match a single check digit. Neither a successful validation nor a region match establishes allocation or patient identity.
+
+Sources: [NHS Data Dictionary: NHS Number](https://www.datadictionary.nhs.uk/attributes/nhs_number.html) and [Public Health Scotland: CHI operations](https://code.publichealthscotland.scot/phsmethods/articles/chi-operations.html#changes-to-chi-numbers-august-2026-inclusion-of-modulus-10-check). Use the [Python range constants](https://github.com/ohtf/nhs-number-py/blob/v3.0.0/nhs_number/constants.py) for compatibility where summaries give less precise boundaries.

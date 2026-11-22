@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Build the JavaScript and declarations. Run npm ci --ignore-scripts once first.
+
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+
+if [[ ! -x node_modules/.bin/tsc ]]; then
+  printf '%s\n' 'Run npm ci --ignore-scripts to install the compiler.' >&2
+  exit 1
+fi
+
+exec node_modules/.bin/tsc --project tsconfig.json "$@"

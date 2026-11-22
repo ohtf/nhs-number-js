@@ -1,0 +1,16 @@
+version = 1
+
+[[annotations]]
+path = ["**.md"]
+SPDX-FileCopyrightText = "2026 Open Health Technology Foundation contributors"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = [".editorconfig", ".gitignore", "**/tsconfig.json", "tsconfig.json", "package.json", "package-lock.json", ".github/**", "s/build", "s/test", "LICENSE"]
+SPDX-FileCopyrightText = "2026 Open Health Technology Foundation contributors"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "tests/conformance/nhs_number_cases.json"
+SPDX-FileCopyrightText = "2021 Andy Law and The University of Edinburgh"
+SPDX-License-Identifier = "MIT"
