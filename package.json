@@ -2,7 +2,6 @@
   "name": "@ohtf/nhs-number-js",
   "version": "0.1.0",
   "description": "Validate, standardise and classify NHS and Scottish CHI numbers in JavaScript and TypeScript.",
-  "private": true,
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -11,6 +10,10 @@
   },
   "engines": {
     "node": ">=22.13"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "dist/",

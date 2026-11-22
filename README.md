@@ -1,10 +1,10 @@
 # nhs-number-js
 
-Validate, standardise and classify NHS and Scottish CHI numbers in JavaScript and TypeScript. Early development; not published to npm.
+Validate, standardise and classify NHS and Scottish CHI numbers in JavaScript and TypeScript. The library is in early development.
 
 ## Quick start
 
-From this checkout, with Node.js 22.13 or newer and Bash:
+Check [npm](https://www.npmjs.com/package/@ohtf/nhs-number-js) for released versions. From this checkout, with Node.js 22.13 or newer and Bash:
 
 ```sh
 npm ci --ignore-scripts
@@ -43,7 +43,7 @@ TypeScript also exports `Region` and `ValidationOptions`. Region names are `SCOT
 
 ## Development
 
-Run `s/test` after `npm ci --ignore-scripts`. The tests use [the Python library’s unmodified JSON vectors](tests/conformance/README.md) and exercise the JavaScript entry point and TypeScript declarations. See the [validation contract](spec/standard.md) and [contribution guide](CONTRIBUTING.md). The library has no runtime dependencies. TypeScript 6 is the sole dev dependency: it emits JavaScript and declarations without a bundler or platform-specific compiler packages.
+Run `s/test` after `npm ci --ignore-scripts`. The tests use [the Python library’s unmodified JSON vectors](tests/conformance/README.md) and exercise the JavaScript entry point and TypeScript declarations. See the [validation contract](spec/standard.md), [contribution guide](CONTRIBUTING.md) and [npm release procedure](https://github.com/ohtf/nhs-number-js/blob/main/docs/releases.md). The library has no runtime dependencies. TypeScript 6 is the sole dev dependency: it emits JavaScript and declarations without a bundler or platform-specific compiler packages.
 
 ## Licence
 
