@@ -1,6 +1,6 @@
 {
   "name": "@ohtf/nhs-number-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validate, standardise and classify NHS and Scottish CHI numbers in JavaScript and TypeScript.",
   "license": "MIT",
   "type": "module",

@@ -4,16 +4,15 @@ Validate, standardise and classify NHS and Scottish CHI numbers in JavaScript an
 
 ## Quick start
 
-Check [npm](https://www.npmjs.com/package/@ohtf/nhs-number-js) for released versions. From this checkout, with Node.js 22.13 or newer and Bash:
+Install from [npm](https://www.npmjs.com/package/@ohtf/nhs-number-js):
 
 ```sh
-npm ci --ignore-scripts
-s/build
+npm install @ohtf/nhs-number-js
 node --input-type=module -e "import { isValid } from '@ohtf/nhs-number-js'; console.log(isValid('987 654 3210', { forRegion: 'SYNTHETIC' }));"
 # true
 ```
 
-One TypeScript source builds to an ES module (`.js`) and declarations (`.d.ts`). The same `import` works in JavaScript and TypeScript, including browser apps using a bundler. On supported Node versions, JavaScript callers can also use `require('@ohtf/nhs-number-js')`. For another local project, run `npm pack --ignore-scripts` after building, then install the resulting tarball.
+One TypeScript source builds to an ES module (`.js`) and declarations (`.d.ts`). The same `import` works in JavaScript and TypeScript, including browser apps using a bundler. On Node.js 22.13 or newer, JavaScript callers can also use `require('@ohtf/nhs-number-js')`.
 
 ## How it compares
 
